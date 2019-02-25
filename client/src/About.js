@@ -15,3 +15,7 @@ class About extends Component {
 }
 
 export default About;
+
+
+q1 = array();
+<QuizzThumbnail {q1...} />
