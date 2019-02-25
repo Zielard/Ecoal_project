@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {HTTP_SERVER_PORT_PICTURES} from './constants.js';
 
 class QuizzThumbnail extends Component {
    render() {
@@ -6,17 +7,10 @@ class QuizzThumbnail extends Component {
        <>
          <p>{this.props.name}</p>
 
-         <img src="{this.props.icon}">
+         <img src={HTTP_SERVER_PORT_PICTURES + this.props.icon}/>
         </>
      );
   }
 }
 
 export default QuizzThumbnail;
-
-
-
-
-
-q1 = array();
-<QuizzThumbnail {q1...} />
