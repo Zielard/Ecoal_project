@@ -8,8 +8,15 @@ import QuizzThumbnail from "./QuizzThumbnail.js";
 
 
 class Home extends Component {
+    constructor (props)
+    {
+      super(props);
+      this.state = {
+         quizzes : quizzes
+      };
+    }
     render() {
-      let quizz = quizzes.map(q => <QuizzThumbnail {...q} />);
+      let quizz = this.state.quizzes.map(q => <QuizzThumbnail {...q} />);
 	return (
     <>
     <p>HOME</p>
