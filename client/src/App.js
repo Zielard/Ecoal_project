@@ -1,16 +1,11 @@
 import React, {Component} from 'react';
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 import {quizzes, users} from './examples';
 import {HTTP_SERVER_PORT_PICTURES} from './constants.js';
 
 import Home from "./Home.js";
 import About from "./About.js";
-
-
-function AppHeader()
-{
-
-}
 
 
 class App extends Component {
