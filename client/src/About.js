@@ -31,7 +31,7 @@ class About extends Component {
           Lucas Lacroix, Samuel Anli Hely, Amélie Chabon, Piotr Zielinski and Seán Caldwell
           Piotr was our team leader and One of our two backend delevopers.
           Sean managed content which would be dispayed within the quizzes, aswell as other jobs.
-          Samuel and Lucas were both our Front End designers and our grpahic designers for this application.
+          Samuel and Lucas were both our Front End designers and our graphic designers for this application.
           Last but not least, Ameile, our other hard working backend developer</p>
 
           <p>Our Motto, 'One For All And All For One' calls back to The Three Musketeers(Or in this case, five).
