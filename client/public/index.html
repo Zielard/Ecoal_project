@@ -27,7 +27,19 @@
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+    
+    <div class="mobile">
+        <div id="content">
+            <div id="root"></div>
+        </div>
+    </div>
+
+
+
+        <div id="drop">
+
+        </div>
+        <input type="text" id ="setmenu" value="isclose" style="display: none;">
   <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -38,6 +50,24 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+        <script>
+            function text(x){
+                document.getElementById("reply"+x).innerHTML="<input type='text' name='reply"+x+"one' id='reply"+x+"one' placeholder='reply 1' required><input type='text' name='reply"+x+"two' id='reply"+x+"two' placeholder='reply 2' required><input type='text' name='reply"+x+"three' id='reply"+x+"three' placeholder='reply 3' required><input type='text' name='reply"+x+"four' id='reply"+x+"four' placeholder='reply 4' required>"
+            }
+            function photo(x){
+                document.getElementById("reply"+x).innerHTML="<input type='url' name='replyimage"+x+"one' id='replyimage"+x+"one' placeholder='Link for the image one' required><input type='url' name='replyimage"+x+"two' id='replyimage"+x+"two' placeholder='Link for the image two' required><input type='url' name='replyimage"+x+"three' id='replyimage"+x+"three' placeholder='Link for the image three' required><input type='url' name='replyimage"+x+"four' id='replyimage"+x+"four' placeholder='Link for the image four' required>"
+            }
+            let countquestion = 1;
+            function addaquestion(){
+                if ( countquestion < 16){
+                    console.log (countquestion)
+                    document.getElementById("page"+countquestion).innerHTML="<div class='thequizz'>  <p>Question "+countquestion+"</p><input type='text' name='question"+countquestion+"' id='question"+countquestion+"' placeholder='Question ...' required><div id='reply"+countquestion+"'> <div class='add' onclick='text("+countquestion+")'>Textual reply</div><div class='add' onclick='photo("+countquestion+")'>Photo reply</div>  </div> </div>";
+                    countquestion = countquestion-1+2;
+                } else {
+                    document.getElementById("stop").innerHTML="<p> you can't add more question.<p>"
+                }
+            }
+        </script>
 </body>
 
 </html>

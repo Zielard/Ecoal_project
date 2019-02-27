@@ -12,7 +12,7 @@ class Question extends Component {
      let answers ="";
      console.log(this.props.txtAnswers);
 
-     if(this.props.txtAnswers.length != 0)
+     if(this.props.txtAnswers != [])
      {
        answers = this.props.txtAnswers.map(a => {
          index = index + 1;

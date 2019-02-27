@@ -1,11 +1,9 @@
 let u1 = {
-  _uid: 1,
   name: 'toto',
   passwd: '123'
 }
 
 let q1 = {
-  _uid: 1,
   name: 'quizz1',
   icon: 'quizz1/quizz1.jpg',
   keywords: ['kitchen', 'english'],
@@ -37,7 +35,6 @@ let q1 = {
 }
 
 let q2 = {
-  _uid: 2,
   name: 'quizz2',
   icon: 'quizz2/aix.jpg',
   keywords: ['Aix', 'Tourisme'],
@@ -67,4 +64,4 @@ let users = [u1];
 
 db.quizzes.drop();
 db.quizzes.insert(quizzes);
-db.quizzes.insert(users);
+db.users.insert(users);
