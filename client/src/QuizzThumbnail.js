@@ -8,11 +8,13 @@ class QuizzThumbnail extends Component {
      return (
        <>
 
-       <Link  to={'/quizz/'+ this.props._uid}>
-         <p>{this.props.name}</p>
-
-         <img src={HTTP_SERVER_PORT_PICTURES + this.props.icon}/>
-         </Link>
+            <Link  to={'/quizz/'+ this.props._id}>
+         
+                <p>{this.props.name}</p>
+                <img src={HTTP_SERVER_PORT_PICTURES + this.props.icon}/>
+         
+            </Link>
+         
         </>
      );
   }

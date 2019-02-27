@@ -15,6 +15,7 @@ class Score extends Component {
       } else {
           msg = "Congratulations "+name+" ! You really know the subject !";
       }
+
        
      return (
        <>
