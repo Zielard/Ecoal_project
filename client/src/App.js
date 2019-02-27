@@ -13,6 +13,7 @@ import NewQuizz from "./NewQuizz.js";
 
 class App extends Component {
     displayMenu() {
+        console.log("cliqued");
         let setmenu = document.getElementById("setmenu").value;
         if (setmenu == "isclose"){ 
                 document.getElementById("menu").innerHTML="<img src='"+HTTP_SERVER_PORT_PICTURES+"logosvg/close.svg' alt='close'/>";
@@ -36,13 +37,14 @@ class App extends Component {
         <BrowserRouter>
             <div>
                 <header>
-                    <div id="menu" onClick={this.displayMenu}><img src={HTTP_SERVER_PORT_PICTURES + menu} alt="menu"/></div>
+                    <div id="menu" onClick={e => this.displayMenu()}><img src={HTTP_SERVER_PORT_PICTURES + menu} alt="menu"/></div>
                     <div><img src={HTTP_SERVER_PORT_PICTURES + logo} alt="logo"/></div>
                     <div><Link  to={'/login'}><img src={HTTP_SERVER_PORT_PICTURES + person} alt="person"/></Link></div>
                 </header>
 
               <Switch>
                 <Route exact={true} path="/" component={Home} />
+                <Route exact={true} path="/home" component={Home} />
                 <Route exact={true} path="/about" component={About} />
                 <Route exact={true} path="/quizz/:id" component={Quizz}/>
                 <Route exact={true} path="/newquizz" component={NewQuizz}/>

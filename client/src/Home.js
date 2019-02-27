@@ -47,11 +47,6 @@ class Home extends Component {
             <>
             <body>
                 <div>
-                    <header>
-                        <div id="menu" onclick="menu()"><img src={HTTP_SERVER_PORT_PICTURES + menu} alt="menu"/></div>
-                        <div id="logo"><img src={HTTP_SERVER_PORT_PICTURES + logo} alt="logo"/></div>
-                        <div id="person"><img src={HTTP_SERVER_PORT_PICTURES + person} alt="person"/></div>
-                    </header>
 
                     <p id="myTitle">HOME</p>
                 </div>
