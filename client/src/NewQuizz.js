@@ -25,7 +25,8 @@ class NewQuizz extends Component {
            questions:  []
         }).then(res => {
           if (res.status === 200)
-            this.loadData();                     // If everything is ok, reload data in order to upadate the component
+             
+            ; //this.loadData();                     // If everything is ok, reload data in order to upadate the component
           else
             console.log("Failed to add quizz");
         }).catch(err => console.log("Error =>", err));
