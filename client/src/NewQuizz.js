@@ -18,9 +18,10 @@ class NewQuizz extends Component {
     
     updateQuizz(e) {
         e.preventDefault();
-        console.log (e);
+        const name = document.getElementById("name")
+        console.log ("target",e.target);
         axios.post(HTTP_SERVER_PORT + 'addnewquizz', {  // The json object to add in the collection
-           name: e.target.quizz.name,
+           name: name,
            questions:  []
         }).then(res => {
           if (res.status === 200)
@@ -55,7 +56,7 @@ class NewQuizz extends Component {
                 <div className="form">
                     <div className="thequizz">
                         <p>Quizz information</p>
-                        <input type="text" name="name" id="name" placeholder="Quizz name" value="gg" required/>
+                        <input type="text" id="quizzName" placeholder="Quizz name" value="gg" required/>
                         <input type="url" name="minature" id="minature" placeholder="Link to the miniature" value="gg" required/>
                     </div>
                     <div id="page">
