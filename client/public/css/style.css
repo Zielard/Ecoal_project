@@ -1,0 +1,39 @@
+/* HOME */
+
+body {
+    margin:70px 0px 0px 0px;
+    height: 1000px;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #F2EAEA;
+}
+
+header {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    align-items: center ;
+    position: fixed;
+    top:0;
+    left: 0px;
+    right: 0px;
+    height: 60px;
+}
+
+header img{
+    height: 48px;
+    padding: 6px;
+}
+.title{
+    text-align: center;
+}
+
+.svg{
+    height: 50px;
+    width: 50px;
+}
+
+#myTitle{
+    text-align: center;
+}
+
