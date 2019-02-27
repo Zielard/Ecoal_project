@@ -13,6 +13,22 @@ class NewQuizz extends Component {
          countquestion : 1
       };
         this.addQuestion = this.addQuestion.bind(this);
+        this.updateQuizz = this.updateQuizz.bind(this);
+    }
+    
+    updateQuizz(e) {
+        e.preventDefault();
+        console.log (e);
+        axios.post(HTTP_SERVER_PORT + 'addnewquizz', {  // The json object to add in the collection
+           name: e.target.quizz.name,
+           questions:  []
+        }).then(res => {
+          if (res.status === 200)
+            this.loadData();                     // If everything is ok, reload data in order to upadate the component
+          else
+            console.log("Failed to add quizz");
+        }).catch(err => console.log("Error =>", err));
+        
     }
     
     addQuestion(){
@@ -22,7 +38,7 @@ class NewQuizz extends Component {
         if (c < 16){
             
             console.log (c)
-            document.getElementById("page"+c).innerHTML="<div class='thequizz'>  <p>Question "+c+"</p><input type='text' name='question"+c+"' id='question"+c+"' placeholder='Question ...' required><div id='reply"+c+"'> <div class='add' onclick='text("+c+")'>Textual reply</div><div class='add' onclick='photo("+c+")'>Photo reply</div>  </div> </div>";            
+            document.getElementById("page"+c).innerHTML="<div class='thequizz'>  <p>Question "+c+"</p><input type='text' name='question"+c+"' id='question"+c+"' placeholder='Question ...' value='gg' required><div id='reply"+c+"'> <div class='add' onclick='text("+c+")'>Textual reply</div><div class='add' onclick='photo("+c+")'>Photo reply</div>  </div> </div>";            
             this.setState({
                 countquestion : c-1+2
             })
@@ -36,11 +52,11 @@ class NewQuizz extends Component {
     render() {
         let log = "logosvg/log.svg";
         return (
-                <form action="#" method="get">
+                <div className="form">
                     <div className="thequizz">
                         <p>Quizz information</p>
-                        <input type="text" name="name" id="name" placeholder="Quizz name" required/>
-                        <input type="url" name="minature" id="minature" placeholder="Link to the miniature" required/>
+                        <input type="text" name="name" id="name" placeholder="Quizz name" value="gg" required/>
+                        <input type="url" name="minature" id="minature" placeholder="Link to the miniature" value="gg" required/>
                     </div>
                     <div id="page">
                         <div id="page1"></div>
@@ -64,9 +80,9 @@ class NewQuizz extends Component {
                          <div className="add" onClick={this.addQuestion}>+ Add another question</div>
                     </div>
                     <div id="log">       
-                          <button type="submit"><img src={HTTP_SERVER_PORT_PICTURES + log} alt="->"/></button>
+                          <button type="submit" onClick={(e) => this.updateQuizz(e)}><img src={HTTP_SERVER_PORT_PICTURES + log} alt="->"/></button>
                     </div>                  
-                </form>
+                </div>
 
             )
     }

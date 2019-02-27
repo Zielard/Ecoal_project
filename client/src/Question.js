@@ -18,7 +18,7 @@ class Question extends Component {
      {
        answers = this.props.txtAnswers.map(a => {
          index = index + 1;
-      return <div> <input type="checkbox" id={index} name={a} value="false" onClick={this.add.bind()}/> <label htmlFor={index}>{a}</label> </div>;
+      return <div className="solution"> <input type="checkbox" id={index} name={a} value="false" onClick={this.add.bind()}/> <label htmlFor={index}>{a}</label> </div>;
        });
      }
      else
@@ -26,7 +26,7 @@ class Question extends Component {
 
        answers = this.props.imgAnswers.map(a => {
         index = index + 1;
-        return <div> <input type="checkbox" id={index} name="subscribe" value="false"/>  <label htmlFor={index}> <img src={HTTP_SERVER_PORT_PICTURES + a} /> </label> </div>
+        return <div className="solution"> <input type="checkbox" id={index} name="subscribe" value="false"/>  <label htmlFor={index}> <img src={HTTP_SERVER_PORT_PICTURES + a} /> </label> </div>
 
        });
      }
@@ -41,9 +41,9 @@ class Question extends Component {
      return (
 //this.props.score
        <form onSubmit={(e) => this.props.response(e)}>
-         <h3>{this.props.question}</h3>
+         <div id="question">{this.props.question}</div>
          <div className="video">{video}</div>
-         <div>{answers}</div>
+         <div id="boxsolution">{answers}</div>
          <input type="submit" value="Submit"/>
         </form>
      );

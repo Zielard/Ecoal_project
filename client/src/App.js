@@ -17,7 +17,7 @@ class App extends Component {
         let setmenu = document.getElementById("setmenu").value;
         if (setmenu == "isclose"){ 
                 document.getElementById("menu").innerHTML="<img src='"+HTTP_SERVER_PORT_PICTURES+"logosvg/close.svg' alt='close'/>";
-                document.getElementById("drop").innerHTML="<div id='menuframe'><a href='/'> Home</a><a href='/about'> About</a></div>";
+                document.getElementById("drop").innerHTML="<div id='menuframe'><a href='/'> Home</a><a href='/newquizz'> Add a new quizz</a><a href='/about'> About</a></div>";
                 document.getElementById("setmenu").value="isopen";
                 return;
             } 

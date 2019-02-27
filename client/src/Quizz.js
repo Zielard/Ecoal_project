@@ -74,15 +74,14 @@ class Quizz extends Component {
 
          let show = "";
          if(this.state.current >= q.questions.length) {
-           show = <Score score={this.state.score} />
+           show = <><h3>{q.name}</h3><img src={HTTP_SERVER_PORT_PICTURES + q.icon}/><Score score={this.state.score} /></>;
          } else {
            show = <Question {... q.questions[this.state.current]} response={this.response}/> ;
          }
 
            return (
                <>
-               <h3>{q.name}</h3>
-               <img src={HTTP_SERVER_PORT_PICTURES + q.icon}/>
+               
                {show}
                 </>
              );

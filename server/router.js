@@ -40,6 +40,12 @@ router
             else res.json(data);
         });
   })
+    .post("/addnewquizz", (req, res) => {
+      const q = new Quizz(req.body);    // The json object is the body of the request
+      q.save()                          // Save the object.
+       .then(item => res.json(item))     // send the object in response
+       .catch(err => res.status(400).send("unable to save to database"));
+    }) 
 
   .use((req, res) => {
     res.status(400);
