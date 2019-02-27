@@ -15,12 +15,14 @@ class Quizz extends Component {
     this.state = {
         current : 0, 
         score : 0,
-        quizz : []
+        quizz : null
     };
     this.response = this.response.bind(this);
+    this.loadData();
   }
     
-    async componentDidMount() {
+    
+    async loadData() {
         console.log(1);
         const quizz = (await axios.get(HTTP_SERVER_PORT+"getquizz/"+ this.props.match.params.id)).data;
         console.log(2);
@@ -59,7 +61,7 @@ class Quizz extends Component {
    render() {
        let q = this.state.quizz;
        
-       if(!q) {
+       if(q == null) {
            
            return (
             <p> Loading ... </p>
