@@ -9,6 +9,11 @@ body {
     box-sizing: border-box;
 
 }
+
+li{
+    list-style: none;
+}
+
 header {
     background-color: #fff;
     display: flex;
@@ -221,3 +226,50 @@ button img { height:45px;width:45px;}
     color: #202020;
     cursor: pointer;
             }
+
+/* ABOUT */
+
+#about h2{
+    text-align: center;
+}
+
+#about p{
+    text-align: center;
+    text-align: justify;
+    padding: 10px;
+}
+
+#textabout{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 720px;
+}
+
+#marge{
+    margin: 0px 15px;
+}
+
+#about h3{
+    text-align: center;
+}
+
+#textteam {
+    text-align: center;
+    display: inline;
+    text-decoration: none; 
+}
+
+#team{
+    padding-bottom: 30px;
+}
+
+#imgteamreact img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 720px;
+    
+}
