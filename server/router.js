@@ -78,15 +78,19 @@ router
         }
     })
     .post("/signUp", (req, res) => {
+    console.log("1")
         if (!req.body.username || !req.body.password) {
             res.json({isConnected: false})
         } else {
+            console.log("2")
             Users.findOne({username: req.body.username})
                 .exec((err, data) => {
                     if (err) console.log("error", err);
                     else {
+                        console.log("data",data)
                         if (data) res.json({isConnected: false});
                         else {
+                            console.log("Username",req.body.username);
                             const q = new Users({username:req.body.username,password:req.body.password});
                             q.save()
                                 .then(() => res.json({isConnected: true}))

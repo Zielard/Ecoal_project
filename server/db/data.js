@@ -1,4 +1,4 @@
-let u3 = {
+let u1 = {
   username: 'toto',
   password: '123'
 }

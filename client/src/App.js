@@ -72,7 +72,6 @@ class App extends Component {
                 <Route exact={true} path="/home" component={Home} />
                 <Route exact={true} path="/about" component={About} />
                 <Route exact={true} path="/login" component={Login} />
-                <Route exact={true} path="/subscribe" component={Subscribe} />
                 <Route exact={true} path="/quizz/:id" component={Quizz}/>
                 {protectedRoute}
                 <Route path="*" component={() => <p>Page Not Found</p>} />

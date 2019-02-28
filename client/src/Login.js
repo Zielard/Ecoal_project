@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import axios from "axios";
 import {Route} from 'react-router-dom';
+import { Redirect } from 'react-router'
 import {HTTP_SERVER_PORT_PICTURES,HTTP_SERVER_PORT} from './constants.js';
 
 const LOGIN = 1;
@@ -12,8 +13,10 @@ class Login extends React.Component {
         this.state = {
             user: null,
             authenticated: false,
-            renderForm: false
+            renderForm: false,
+            redirect: false
         };
+        this.login = this.login.bind(this);
         if (this.getSessionUser()) {
             this.login(this.getSessionUser())
         }
@@ -23,23 +26,24 @@ class Login extends React.Component {
         if (user) {
             axios.post(HTTP_SERVER_PORT + 'login', user)
                 .then(res => {
-                console.log("data",res.data)
                     if (res.data.isConnected) {
-                        console.log("login",user)
                         this.setSessionUser(user);
                         this.setState({
                             user: user,
-                            authenticated: true
+                            authenticated: true,
+                            //redirect: true
                         });
-                        //this.props.checkConnexion(true);
+                        
                     }
                 })
         }
     };
 
     signUp = (user) => {
+            console.log("users",user)
         axios.post(HTTP_SERVER_PORT + 'signUp', user)
             .then(res => {
+            console.log("data",res.data)
                 if (res.data.isConnected) this.login(user)
             });
     };
@@ -82,6 +86,7 @@ class Login extends React.Component {
     // --- form methods
     handleForm = (e) => {
         e.preventDefault();
+        console.log("handleform",this.action)
         const user = {
             username: e.target.username.value,
             password: e.target.password.value
@@ -97,8 +102,20 @@ class Login extends React.Component {
         this.setState({renderForm: !this.state.renderForm});
     };
 
-    mark = (x) => {
+    mark = (e,x) => {
+        console.log("mark",x)
         this.action = +x;
+        if(+x ==SIGNUP) {
+            const user = {
+            username: document.getElementById("username"),
+            password: document.getElementById("mdp")
+        };
+        if (user && user.username && user.password) {
+            if (this.action === LOGIN) this.login(user);
+            else if (this.action === SIGNUP) this.signUp(user);
+        }
+        this.toggleForm();
+        }
     };
 
     renderForm = () => {
@@ -116,9 +133,9 @@ class Login extends React.Component {
                     <form action="#" method="get" onSubmit={e => this.handleForm(e)}>
                         <input type="text" name="username" id="username" placeholder="id"/>
                         <input type="password" name="password" id="mdp" placeholder="password"/>
-                        <button type="submit"onClick={() => this.mark(LOGIN)}><img src={HTTP_SERVER_PORT_PICTURES + log} alt="->"/></button>
+                        <button type="submit" onClick={() => this.mark(LOGIN)}><img src={HTTP_SERVER_PORT_PICTURES + log} alt="->"/></button>
                     </form>
-                        <button type="submit" name="signup" value="Sign up" onClick={() => this.mark(SIGNUP)}>Sign up</button>
+                        <button type="submit" name="signup" value="Sign up" onClick={(e) => this.mark(e,SIGNUP)}>Sign up</button>
                 </div>
             </div>
         </div>
@@ -127,15 +144,21 @@ class Login extends React.Component {
 
     
     render = () => {
-        console.log(this.state.user,this.state.authenticated)
+        
         if (this.state.user && this.state.authenticated) {
-            return (
-                <>
-                    <p>{this.state.user.username}</p>
-                    <button type="button" name="logout" className="btn btn-secondary" onClick={this.logout}>logout
-                    </button>
-                </>
-            )
+            
+            if (this.state.redirect == true) {
+                return <Redirect to="/home" />;
+            } else {
+                return (
+                    <>
+                        <p>{this.state.user.username}</p>
+                        <button type="button" name="logout" className="btn btn-secondary" onClick={this.logout}>logout
+                        </button>
+                    </>
+                )
+            }
+            
         } else {
             return (
                 <>
