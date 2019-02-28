@@ -45,14 +45,9 @@ class Home extends Component {
            console.log(this.state.quizzes);
         return (
             <>
-                <div>
-
-                    <p id="myTitle">HOME</p>
-                </div>
-
-                <div className="title">
+            
             {quizz} toto
-                </div>
+                
             </>
 
             )

@@ -3,6 +3,7 @@
 body {
     margin:70px 0px 0px 0px;
     background-color: #f2EAEA;
+    font-size: large;
 }
 *{
     font-family: sans-serif;
@@ -49,9 +50,15 @@ header img {
     margin: 5px;
     font-size: large;
 }
+
+
+.aquizz:first-child {
+    margin-top : -15px;
+}
 .aquizz img {
     max-width:100%;
     border-radius: 3px 3px 0px 0px;
+    width: 100%;
 }
 .aquizz {
     background-color:white;
@@ -62,6 +69,11 @@ header img {
     padding: 10px 10px 12px 10px;
     margin: 0px;
 }
+
+input img{
+    width: 100%;
+}
+
 .mobile {
     display: block;
     margin-left: auto;
@@ -77,9 +89,6 @@ header img {
     width: 50px;
 }
 
-#myTitle{
-    text-align: center;
-}
 
 
 
@@ -131,6 +140,7 @@ header img {
     background-image: linear-gradient(to bottom right, #ff574d, #f9cd25);
 }
 button img { height:45px;width:45px;}
+
 #log input {
     display: block;
     width: 100%;
@@ -142,7 +152,9 @@ button img { height:45px;width:45px;}
     border-radius: 3px;
 }
 #content * {box-sizing: border-box;}
+
 button img { height:45px;width:45px;}
+
 #log input {
     display: block;
     width: 100%;
@@ -229,10 +241,6 @@ button img { height:45px;width:45px;}
     cursor: pointer;
             }
 
-    input::placeholder{
-        color: red;
-        opacity: 1;
-    }
 
 /* ABOUT */
 
