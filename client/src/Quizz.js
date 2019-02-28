@@ -45,6 +45,7 @@ class Quizz extends Component {
         if(e.target.elements[i].checked){
             choices.push(i);
         }
+        e.target.elements[i].checked = false;
     }
       console.log(choices)
 
