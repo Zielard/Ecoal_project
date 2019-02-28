@@ -45,18 +45,23 @@ class Quizz extends Component {
             choices.push(i);
         }
     }
+      console.log(choices)
 
     let verify = true;
     for(let i = 0; i < choices.length; i++) {
         if(choices[i] != q.questions[this.state.current].solutions[i]){
             verify = false;
+            console.log(q.questions[this.state.current].solutions[i])
         }
     }
       if(verify == true) {
         this.setState({score : this.state.score + q.questions[this.state.current].points});
+          console.log()
       }
+      console.log(verify)
 
     this.setState({current : this.state.current + 1});
+      console.log("score",this.state.score);
   }
 
    render() {

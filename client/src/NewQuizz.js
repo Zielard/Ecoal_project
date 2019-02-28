@@ -18,13 +18,69 @@ class NewQuizz extends Component {
     
     updateQuizz(e) {
         e.preventDefault();
-        const name = document.getElementById("name");
-        const icon = document.getElementById("miniature");
+        console.log(document.getElementById("quizzName").value);
+        const name = document.getElementById("quizzName").value;
+        const icon = document.getElementById("miniature").value;
         const keywords = [];
         
-        let i = 0;
-        while(document.getElementById("name"+i+"one")) {
+        let quizz = {
+            name: '',
+            icon: '',
+            keywords: [],
+            questions: [{
+                question: '',
+                video: null,
+                txtAnswers: [],
+                imgAnswers: [],
+                solutions: [],
+                points: null
+                },{
+                question: '',
+                video: null,
+                txtAnswers: [],
+                imgAnswers: [],
+                solutions: [],
+                points: null
+                },{
+                question: '',
+                video: null,
+                txtAnswers: [],
+                imgAnswers: [],
+                solutions: [],
+                points: null
+                },{
+                question: '',
+                video: null,
+                txtAnswers: [],
+                imgAnswers: [],
+                solutions: [],
+                points: null
+                }
+            ],
+            published: true,
+            owner: null,
+            scores: []
+        };
+        
+        let i = 1;
+        console.log("question"+i,document.getElementById("question"+i).value)
+        while(document.getElementById("question"+i) != null) {
+            quizz.questions[i].question = document.getElementById("question"+i).value;
+            //quizz.questions[i][video] = document.getElementById("video"+i).value;
             
+            if(document.getElementById("reply"+i+"one").value != undefined) {
+                quizz.questions[i].txtAnswers = [document.getElementById("reply"+i+"one").value, 
+                                document.getElementById("reply"+i+"two").value, 
+                                document.getElementById("reply"+i+"three").value, 
+                                document.getElementById("reply"+i+"four").value];
+            } else {
+                quizz.questions[i].imgAnswers = [document.getElementById("replyimage"+i+"one").value,
+                    document.getElementById("replyimage"+i+"two").value,
+                    document.getElementById("replyimage"+i+"three").value,
+                    document.getElementById("replyimage"+i+"four").value];
+            }
+            quizz.questions[i].solutions = [];
+            quizz.questions[i].points = null;
             i++;
         }
         
