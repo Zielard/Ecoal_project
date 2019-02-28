@@ -200,6 +200,9 @@ button img { height:45px;width:45px;}
     width: 30px;
 }
 
+.thequizz input{
+    color: black;
+}
 
 video {
     width: 100%;
