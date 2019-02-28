@@ -46,7 +46,7 @@ class Home extends Component {
         return (
             <>
             
-            {quizz} toto
+            {quizz}
                 
             </>
 

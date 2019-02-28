@@ -37,7 +37,7 @@ class Question extends Component {
      {
        video = <video controls>
 
-                <source src={HTTP_SERVER_PORT + this.props.video}
+                <source src={HTTP_SERVER_PORT_PICTURES + this.props.video}
                         type="video/mp4"/>
 
                 Sorry, your browser doesn't support embedded videos.

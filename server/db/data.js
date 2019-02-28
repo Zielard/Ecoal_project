@@ -111,8 +111,46 @@ let q3 = {
   scores: []
 };
 
+let q4 = {
+  name: 'architecture and painting ?',
+  icon: 'quizz5/1_portugal.jpg',
+  keywords: ['architecture','painting','video'],
+  questions: [{
+    question: 'What is the name of this famous painting',
+    video: 'quizz5/video.mp4',
+    txtAnswers: ["Echo","The Storm","The Scream","The Crime"],
+    imgAnswers: [],
+    solutions: [2],
+    points: 1
+  }, {
+    question: 'which of these authors are Spanish ?',
+    video: null,
+    txtAnswers: ["Magrit", "Frida Kahlo", "Salvador Dali", "Joan miro"],
+    imgAnswers: [2,3],
+    solutions: [3],
+    points: 3
+  }, {
+    question: 'Which artists are working in the 21 centhury ?',
+    video: null,
+    txtAnswers: ["Andy Wharol", "Banksy", "JR", "Claude Monet"],
+    imgAnswers: [],
+    solutions: [1,2],
+    points: 1
+  }, {
+    question: 'Which of these monuments are in art deco style ?',
+    video: null,
+    txtAnswers: [],
+    imgAnswers: ['quizz5/1_portugal.jpg','quizz5/2_lens_mega_cut.jpg','quizz5/3_lens.jpg','quizz5/4_beaune.jpg'],
+    solutions: [1,2],
+    points: 1
+  }],
+  published: true,
+  owner: db.users.findOne({name: "toto"}),
+  scores: []
+};
 
-let quizzes = [q1, q2, q3];
+
+let quizzes = [q1, q2, q3, q4];
 let users = [u1];
 
 db.quizzes.drop();
