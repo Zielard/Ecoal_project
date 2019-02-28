@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 1560 1560" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:10;">
+    <g id="Calque_3">
+        <g transform="matrix(1.81439,0,0,1.81439,-593.188,-1249.63)">
+            <path d="M873.7,1447.7L873.7,875.7L638.7,875.7L638.7,1447.7L756.7,1394.7L873.7,1447.7Z" style="fill:rgb(221,221,221);fill-rule:nonzero;stroke:rgb(204,204,204);stroke-width:45px;"/>
+        </g>
+        <g transform="matrix(1.81439,0,0,1.81439,-593.098,-1183.05)">
+            <circle cx="756.7" cy="974.7" r="222" style="fill:rgb(255,202,16);stroke:rgb(255,162,0);stroke-width:45px;stroke-linejoin:miter;"/>
+        </g>
+        <g transform="matrix(1.81439,0,0,1.81439,-593.098,-1183.05)">
+            <path d="M756.2,822.5L798.7,908.7L893.7,922.5L824.9,989.5L841.2,1084.2L756.2,1039.5L671.1,1084.2L687.4,989.5L618.6,922.5L713.7,908.7L756.2,822.5Z" style="fill:rgb(255,162,0);fill-rule:nonzero;"/>
+        </g>
+    </g>
+</svg>

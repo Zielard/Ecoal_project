@@ -19,8 +19,9 @@ class Score extends Component {
        
      return (
        <>
-        <span className="score">{this.props.score}</span>
-       <h3>{msg}</h3>
+       <div id="bravo">{msg}</div>
+        <div id="score-quizz">{this.props.quizz}</div>
+        <div id="score"><span id="underline">{this.props.score}</span></div>
         </>
      );
   }
