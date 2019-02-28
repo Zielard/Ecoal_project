@@ -6,8 +6,8 @@ import {HTTP_SERVER_PORT_PICTURES} from './constants.js';
 class Score extends Component {
    render() {
        let msg = "";
-       let name = "Paul";
-       
+       let name = "Bryan";
+       console.log(this.props.score/3)
       if(this.props.score < this.props.score/3) {
           msg = "Try it again, you will be better for sure ! We believe in you, "+name+" !";
       } else if (this.props.score > this.props.score/3 && this.props.score < this.props.score/1.5) {

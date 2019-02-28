@@ -51,21 +51,16 @@ class Quizz extends Component {
     for(let i = 0; i < choices.length; i++) {
         if(choices[i] != q.questions[this.state.current].solutions[i]){
             verify = false;
-            console.log(q.questions[this.state.current].solutions[i])
         }
     }
       if(verify == true) {
         this.setState({score : this.state.score + q.questions[this.state.current].points});
-          console.log()
       }
-      console.log(verify)
 
     this.setState({current : this.state.current + 1});
-      console.log("score",this.state.score);
   }
 
    render() {
-     console.log("quizz",this.state);
        let q = this.state.quizz;
 
        if(q == null) {
@@ -75,7 +70,6 @@ class Quizz extends Component {
            );
 
        } else {
-        console.log(q);
 
          let show = "";
          if(this.state.current >= q.questions.length) {

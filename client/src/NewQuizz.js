@@ -85,15 +85,19 @@ class NewQuizz extends Component {
             quizz.questions[i-1].solutions = solutions;
             quizz.questions[i-1].points = document.getElementById("point"+i).value;
             i++;
-            console.log(quizz)
         }
         
         const published = true;
         const owner = 1;
         const scores = [];
         axios.post(HTTP_SERVER_PORT + 'addnewquizz', {  // The json object to add in the collection
-           name: name,
-           questions:  []
+          name: quizz.name,
+          icon: quizz.icon,
+          keywords: [],
+          questions: quizz.questions,
+          published: true,
+          owner: quizz.owner,
+          scores: []
         }).then(res => {
           if (res.status === 200)
              
