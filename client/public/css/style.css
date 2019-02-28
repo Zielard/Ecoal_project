@@ -332,3 +332,11 @@ button img { height:45px;width:45px;}
     border-bottom: 5px #ffa200 solid;
     padding: 8px 20px;
             }
+
+
+/* LOGIN */
+
+#log input{
+    background-color: #fff;
+    color: black;
+}
