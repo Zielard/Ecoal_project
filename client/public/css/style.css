@@ -70,8 +70,9 @@ header img {
     margin: 0px;
 }
 
-input img{
-    width: 100%;
+#content img{
+    max-width: 100%;
+    border-radius: 3px;
 }
 
 .mobile {
@@ -177,17 +178,19 @@ button img { height:45px;width:45px;}
 
 /**** QUIZZ ****/
 #question {
-    color: #fff;
+    text-align: center;
+    color: #444;
     font-size:large;
     line-height: 175%;
     padding: 32px 20px;
     margin: 12px;
 }
+
 .solution {
     padding: 12px 20px;
     margin: 12px;
-    border-radius: 50px;
-    background-color: #404040;
+    border-radius: 20px;
+    background-color: #fff;
     cursor: pointer;
 }
 
@@ -288,4 +291,3 @@ button img { height:45px;width:45px;}
     max-width: 720px;
     
 }
-

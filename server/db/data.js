@@ -96,7 +96,7 @@ let q3 = {
     txtAnswers: ["Snoop Dog","Post Malone","JpegMafia","Drake"],
     imgAnswers: [],
     solutions: [3],
-    points: 3    txtAnswers: ["Kendrick Lamar","Eminem","Travis Scott","Tupac"],
+    points: 3    
 
   }, {
     question: 'Who is the youngest artist?',
