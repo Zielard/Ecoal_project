@@ -47,8 +47,8 @@ class App extends Component {
                 <Route exact={true} path="/" component={Home} />
                 <Route exact={true} path="/home" component={Home} />
                 <Route exact={true} path="/about" component={About} />
-                <Route exact={true} path="/Login" component={Login} />
-                <Route exact={true} path="/Subscribe" component={Subscribe} />
+                <Route exact={true} path="/login" component={Login} />
+                <Route exact={true} path="/subscribe" component={Subscribe} />
                 <Route exact={true} path="/quizz/:id" component={Quizz}/>
                 <Route exact={true} path="/newquizz" component={NewQuizz}/>
                 <Route path="*" component={() => <p>Page Not Found</p>} />

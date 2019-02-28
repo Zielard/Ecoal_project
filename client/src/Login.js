@@ -20,7 +20,7 @@ class Login extends Component {
                         <input type="password" id="mdp" placeholder="password"/>
                         <button type="submit"><img src={HTTP_SERVER_PORT_PICTURES + log} alt="->"/></button>
                     </form>
-                    <a href="form_new.html">Create an account</a>
+                    <a href="/subscribe">Create an account</a>
                 </div>
             </div>
         </div>

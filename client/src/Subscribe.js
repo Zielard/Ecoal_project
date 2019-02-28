@@ -11,7 +11,7 @@ class Subscribe extends Component {
            <div id="content">
                <div id="me">
                    <div class="mepro"><img src={HTTP_SERVER_PORT_PICTURES + person} alt="avatar"/></div>
-                   <div class="metext"><p>Login</p></div>
+                   <div class="metext"><p>Subscribe</p></div>
                </div>
                <div id="log">
                    <form action="#" method="get">
@@ -20,7 +20,7 @@ class Subscribe extends Component {
                        <input type="password" id="mdp" placeholder="password"/>
                        <button type="submit"><img src={HTTP_SERVER_PORT_PICTURES + log} alt="->"/></button>
                    </form>
-                   <a href="form.html">login</a>
+                   <a href="/login">login</a>
                </div>
            </div>
        </div>
