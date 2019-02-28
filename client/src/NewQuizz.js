@@ -24,37 +24,10 @@ class NewQuizz extends Component {
         const keywords = [];
         
         let quizz = {
-            name: '',
-            icon: '',
-            keywords: [],
+            name: name,
+            icon: icon,
+            keywords: keywords,
             questions: [{
-                question: '',
-                video: null,
-                txtAnswers: [],
-                imgAnswers: [],
-                solutions: [],
-                points: null
-                },{
-                question: '',
-                video: null,
-                txtAnswers: [],
-                imgAnswers: [],
-                solutions: [],
-                points: null
-                },{
-                question: '',
-                video: null,
-                txtAnswers: [],
-                imgAnswers: [],
-                solutions: [],
-                points: null
-                },{
-                question: '',
-                video: null,
-                txtAnswers: [],
-                imgAnswers: [],
-                solutions: [],
-                points: null
                 }
             ],
             published: true,
@@ -65,29 +38,59 @@ class NewQuizz extends Component {
         let i = 1;
         console.log("question"+i,document.getElementById("question"+i).value)
         while(document.getElementById("question"+i) != null) {
-            quizz.questions[i].question = document.getElementById("question"+i).value;
-            //quizz.questions[i][video] = document.getElementById("video"+i).value;
-            
+            quizz.questions[i-1].question = document.getElementById("question"+i).value;
+            //quizz.questions[i-1].video = document.getElementById("video"+i).value;
+            quizz.questions[i-1].video = null;
+            let solutions = [];
             if(document.getElementById("reply"+i+"one").value != undefined) {
-                quizz.questions[i].txtAnswers = [document.getElementById("reply"+i+"one").value, 
+                quizz.questions[i-1].txtAnswers = [document.getElementById("reply"+i+"one").value, 
                                 document.getElementById("reply"+i+"two").value, 
                                 document.getElementById("reply"+i+"three").value, 
                                 document.getElementById("reply"+i+"four").value];
+                
+                if(document.getElementById("solution"+i+"one").checked){
+                    solutions.push(0);
+                }
+                if(document.getElementById("solution"+i+"two").checked){
+                    solutions.push(1);
+                }
+                if(document.getElementById("solution"+i+"three").checked){
+                    solutions.push(2);
+                }
+                if(document.getElementById("solution"+i+"four").checked){
+                    solutions.push(3);
+                }
+                
+                quizz.questions[i-1].imgAnswers = [];
             } else {
-                quizz.questions[i].imgAnswers = [document.getElementById("replyimage"+i+"one").value,
+                quizz.questions[i-1].imgAnswers = [document.getElementById("replyimage"+i+"one").value,
                     document.getElementById("replyimage"+i+"two").value,
                     document.getElementById("replyimage"+i+"three").value,
                     document.getElementById("replyimage"+i+"four").value];
+                
+                if(document.getElementById("solutionimg"+i+"one").checked){
+                    solutions.push(0);
+                }
+                if(document.getElementById("solutionimg"+i+"two").checked){
+                    solutions.push(1);
+                }
+                if(document.getElementById("solutionimg"+i+"three").checked){
+                    solutions.push(2);
+                }
+                if(document.getElementById("solutionimg"+i+"four").checked){
+                    solutions.push(3);
+                }
+                quizz.questions[i-1].txtAnswers = [];
             }
-            quizz.questions[i].solutions = [];
-            quizz.questions[i].points = null;
+            quizz.questions[i-1].solutions = solutions;
+            quizz.questions[i-1].points = document.getElementById("point"+i).value;
             i++;
+            console.log(quizz)
         }
         
         const published = true;
         const owner = 1;
         const scores = [];
-        console.log ("target",e.target);
         axios.post(HTTP_SERVER_PORT + 'addnewquizz', {  // The json object to add in the collection
            name: name,
            questions:  []
@@ -108,7 +111,7 @@ class NewQuizz extends Component {
         if (c < 16){
             
             console.log (c)
-            document.getElementById("page"+c).innerHTML="<div class='thequizz'>  <p>Question "+c+"</p><input type='text' name='question"+c+"' id='question"+c+"' placeholder='Question ...' value='gg' required><div id='reply"+c+"'> <div class='add' onclick='text("+c+")'>Textual reply</div><div class='add' onclick='photo("+c+")'>Photo reply</div>  </div> </div>";            
+            document.getElementById("page"+c).innerHTML="<div class='thequizz'>  <p>Question "+c+"</p><input type='text' name='question"+c+"' id='question"+c+"' placeholder='Question ...' value='gg' required><div id='reply"+c+"'> <div class='add' onclick='text("+c+")'>Textual reply</div><div class='add' onclick='photo("+c+")'>Photo reply</div>  </div> <input type='number' name='point"+c+"' id='point"+c+"' placeholder='Points for a good answer' required/></div>";            
             this.setState({
                 countquestion : c-1+2
             })
