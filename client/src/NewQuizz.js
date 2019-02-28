@@ -115,7 +115,7 @@ class NewQuizz extends Component {
         if (c < 16){
             
             console.log (c)
-            document.getElementById("page"+c).innerHTML="<div class='thequizz'>  <p>Question "+c+"</p><input type='text' name='question"+c+"' id='question"+c+"' placeholder='Question ...' value='gg' required><div id='reply"+c+"'> <div class='add' onclick='text("+c+")'>Textual reply</div><div class='add' onclick='photo("+c+")'>Photo reply</div>  </div> <input type='number' name='point"+c+"' id='point"+c+"' placeholder='Points for a good answer' required/></div>";            
+            document.getElementById("page"+c).innerHTML="<div class='thequizz'>  <p>Question "+c+"</p><input type='text' name='question"+c+"' id='question"+c+"' placeholder='Question ...' required><div id='reply"+c+"'> <div class='add' onclick='text("+c+")'>Textual reply</div><div class='add' onclick='photo("+c+")'>Photo reply</div>  </div> <input type='number' name='point"+c+"' id='point"+c+"' placeholder='Points for a good answer' required/></div>";            
             this.setState({
                 countquestion : c-1+2
             })
@@ -132,8 +132,8 @@ class NewQuizz extends Component {
                 <div className="form">
                     <div className="thequizz">
                         <p>Quizz information</p>
-                        <input type="text" id="quizzName" placeholder="Quizz name" value="gg" required/>
-                        <input type="url" name="miniature" id="miniature" placeholder="Link to the miniature" value="gg" required/>
+                        <input type="text" id="quizzName" placeholder="Quizz name" required/>
+                        <input type="url" name="miniature" id="miniature" placeholder="Link to the miniature" required/>
                     </div>
                     <div id="page">
                         <div id="page1"></div>
