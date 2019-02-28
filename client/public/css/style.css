@@ -294,3 +294,35 @@ button img { height:45px;width:45px;}
     max-width: 720px;
     
 }
+
+
+
+
+/*** SCORE ***/
+
+#score-image{
+    display: block;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#bravo {
+    font-size: xx-large;
+    text-align: center;
+    padding-bottom: 25px;
+}
+#score-quizz {
+    font-size: x-large;
+    text-align: center;
+    padding-bottom: 5px;
+}
+#score {
+    font-size: xx-large;
+    text-align: center;
+    padding-bottom: 25px;
+    font-weight: bold;
+}
+#underline {
+    border-bottom: 5px #ffa200 solid;
+    padding: 8px 20px;
+            }

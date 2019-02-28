@@ -112,7 +112,7 @@ let q3 = {
 };
 
 let q4 = {
-  name: 'architecture and painting ?',
+  name: 'Architecture and painting ',
   icon: 'quizz5/1_portugal.jpg',
   keywords: ['architecture','painting','video'],
   questions: [{

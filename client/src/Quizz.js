@@ -74,8 +74,9 @@ class Quizz extends Component {
        } else {
 
          let show = "";
+           let cup = "logosvg/cup.svg"
          if(this.state.current >= q.questions.length) {
-           show = <><h3>{q.name}</h3><img src={HTTP_SERVER_PORT_PICTURES + q.icon}/><Score score={this.state.score} maxscore={this.state.maxscore} /></>;
+           show = <><div id="score-image"><img src={HTTP_SERVER_PORT_PICTURES + cup} alt="cup"/></div><Score score={this.state.score} maxscore={this.state.maxscore} quizz={q.name}/></>;
          } else {
            show = <Question {... q.questions[this.state.current]} response={this.response}/> ;
          }
