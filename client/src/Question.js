@@ -35,7 +35,7 @@ class Question extends Component {
 
      if(this.props.video != null)
      {
-       video = <video controls>
+       video = <video controls autoplay muted lopp>
 
                 <source src={HTTP_SERVER_PORT_PICTURES + this.props.video}
                         type="video/mp4"/>
@@ -43,6 +43,7 @@ class Question extends Component {
                 Sorry, your browser doesn't support embedded videos.
             </video>;
      }
+     let log = "logosvg/log.svg";
 
      return (
 //this.props.score
@@ -50,7 +51,7 @@ class Question extends Component {
          <div id="question">{this.props.question}</div>
          {video}
          <div id="boxsolution">{answers}</div>
-         <input type="submit" value="Submit"/>
+         <div id="log"><button type="submit"><img src={HTTP_SERVER_PORT_PICTURES + log} alt="->"/></button></div>
         </form>
      );
   }

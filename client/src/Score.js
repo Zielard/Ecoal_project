@@ -7,10 +7,10 @@ class Score extends Component {
    render() {
        let msg = "";
        let name = "Bryan";
-       console.log(this.props.score/3)
-      if(this.props.score < this.props.score/3) {
+       
+      if(this.props.score < this.props.maxscore/3) {
           msg = "Try it again, you will be better for sure ! We believe in you, "+name+" !";
-      } else if (this.props.score > this.props.score/3 && this.props.score < this.props.score/1.5) {
+      } else if (this.props.score > this.props.maxscore/3 && this.props.score < this.props.maxscore/1.5) {
         msg = name+" ! It's well done ! You will became an expert !";
       } else {
           msg = "Congratulations "+name+" ! You really know the subject !";

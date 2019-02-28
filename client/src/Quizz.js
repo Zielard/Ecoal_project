@@ -15,6 +15,7 @@ class Quizz extends Component {
     this.state = {
         current : 0,
         score : 0,
+        maxscore : 0,
         answers : [],
         quizz : null
     };
@@ -56,6 +57,7 @@ class Quizz extends Component {
       if(verify == true) {
         this.setState({score : this.state.score + q.questions[this.state.current].points});
       }
+        this.setState({maxscore : this.state.score + q.questions[this.state.current].points});
 
     this.setState({current : this.state.current + 1});
   }
@@ -73,7 +75,7 @@ class Quizz extends Component {
 
          let show = "";
          if(this.state.current >= q.questions.length) {
-           show = <><h3>{q.name}</h3><img src={HTTP_SERVER_PORT_PICTURES + q.icon}/><Score score={this.state.score} /></>;
+           show = <><h3>{q.name}</h3><img src={HTTP_SERVER_PORT_PICTURES + q.icon}/><Score score={this.state.score} maxscore={this.state.maxscore} /></>;
          } else {
            show = <Question {... q.questions[this.state.current]} response={this.response}/> ;
          }
