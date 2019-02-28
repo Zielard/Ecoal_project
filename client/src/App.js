@@ -13,12 +13,31 @@ import Login from "./Login.js";
 import Subscribe from "./Subscribe.js";
 
 class App extends Component {
+    constructor (props)
+    {
+      super(props);
+      this.state = {
+          connected: false
+      };
+    }
+    checkConnexion(connected) {
+        if (connected !== this.state.connected) this.setState({connected: connected})
+    }
     displayMenu() {
         console.log("cliqued");
         let setmenu = document.getElementById("setmenu").value;
+        
+        let x = '';
+        let y = '';
+        if(Login.getUser()) {
+            x = "<a href='/newquizz'> Add a new quizz</a><a href='/Login'>Logout</a>";
+        } else {
+            x = "<a href='/Login'>Login / Subscribe</a>";
+        }
+        
         if (setmenu == "isclose"){
                 document.getElementById("menu").innerHTML="<img src='"+HTTP_SERVER_PORT_PICTURES+"logosvg/close.svg' alt='close'/>";
-                document.getElementById("drop").innerHTML="<div id='menuframe'><a href='/'> Home</a><a href='/Login'> Login</a><a href='/newquizz'> Add a new quizz</a><a href='/Subscribe'> Subscribe</a><a href='/about'> About</a></div>";
+                document.getElementById("drop").innerHTML="<div id='menuframe'><a href='/'> Home</a><a href='/about'> About</a>"+x+"</div>";
                 document.getElementById("setmenu").value="isopen";
                 return;
             }
@@ -32,7 +51,12 @@ class App extends Component {
     render() {
         let logo = "logosvg/logo.svg";
         let menu = "logosvg/menu.svg";
-        let person = "logosvg/person.svg"
+        let person = "logosvg/person.svg";
+        
+        let protectedRoute = null;
+        if(Login.getUser()) {
+            protectedRoute = <Route exact={true} path="/newquizz" component={NewQuizz}/>;
+        }
 	return (
 
         <BrowserRouter>
@@ -50,7 +74,7 @@ class App extends Component {
                 <Route exact={true} path="/login" component={Login} />
                 <Route exact={true} path="/subscribe" component={Subscribe} />
                 <Route exact={true} path="/quizz/:id" component={Quizz}/>
-                <Route exact={true} path="/newquizz" component={NewQuizz}/>
+                {protectedRoute}
                 <Route path="*" component={() => <p>Page Not Found</p>} />
               </Switch>
 

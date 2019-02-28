@@ -30,19 +30,19 @@ class Home extends Component {
     }
     
     render() {
-       if(this.state.quizzes==[]) {
+       if(this.state.quizzes.length == 0) {
 
            return (
             <p> Loading ... </p>
            );
 
        } else {
+           console.log("quizzes",this.state.quizzes);
           let quizz = this.state.quizzes.map(q => <QuizzThumbnail {...q} />);
                                              console.log(quizz)
             let logo = "logosvg/logo.svg" ;
             let person ="logosvg/person.svg" ;
             let menu ="logosvg/menu.svg" ;  
-           console.log(this.state.quizzes);
         return (
             <>
             

@@ -1,6 +1,6 @@
-let u1 = {
-  name: 'toto',
-  passwd: '123'
+let u3 = {
+  username: 'toto',
+  password: '123'
 }
 
 let q1 = {
